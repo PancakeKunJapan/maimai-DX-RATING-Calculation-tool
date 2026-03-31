@@ -1,8 +1,18 @@
 body {
-    font-family: sans-serif;
+    font-family:"源真ゴシック", "Roboto", "源ノ角ゴシック", "Koruri", sans-serif;
     padding: 20px;
-    background-color: #f5f5f5;
+    background: linear-gradient(to bottom, #fa63c8 , #f9a8d4);
     text-align: center;
+    animation: fadeIn 0.7s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+    color: #333;
+}
+.content {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 h1 { color: #333; }
 #constants {
@@ -13,21 +23,28 @@ h1 { color: #333; }
     margin-bottom: 30px;
 }
 .level-btn {
+    display: flex;
     padding: 15px 25px;
-    font-size: 1.1rem;
+    font-size: 2.2rem;
+    font-weight: bold;
     cursor: pointer;
-    background: linear-gradient(to left, #007bff, #0056b3);
+    background: linear-gradient(45deg, #22d3ee, #8b5cf6);
+    border: none; 
     color: white;
-    border: none;
     border-radius: 5px;
-    min-width: 80px;
+    width: 80px;
+    height: 80px;
+    transition: .3s cubic-bezier(0.45, 0, 0.55, 1);
+    justify-content: center; 
+    align-items: center;
 }
 .level-btn:hover {
-    background: linear-gradient(to left, #0056b3, #004080);
+    transform: translateY(-5px);
 }
 .overlay {
     display: none;
     position: fixed;
+    animation: fadeIn 0.7s cubic-bezier(0.33, 1, 0.68, 1) forwards;
     top: 0;
     left: 0;
     width: 100%;
@@ -37,25 +54,116 @@ h1 { color: #333; }
     justify-content: center;
     align-items: center;
 }
+.modal-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+}
 .modal-content {
     background: white;
     padding: 30px;
     border-radius: 15px;
-    max-width: 90%;
+    width: 500px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.5);
 }
 .modal-content button {
+    font-weight: bold;
     padding: 15px 20px;
     margin: 5px;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     cursor: pointer;
-    border: 1px solid #ccc;
+    color:white;
+    border: none;
     border-radius: 5px;
-    background: #eee;
+    background: linear-gradient(45deg, #22d3ee, #8b5cf6);
+    background-size: 200% 100%;
+    transition: .3s cubic-bezier(0.45, 0, 0.55, 1);
+}
+.modal-content button:hover {
+    transform: translateY(-3px);
 }
 .close-msg {
     display: block;
     margin-top: 15px;
     font-size: 0.8rem;
     color: #666;
+}
+.ap-checkbox {
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+.note {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 10px;
+}
+input[type="number"] {
+    width: 150px;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.3s;
+}
+input[type="number"]:focus {
+    border-color: #007bff;
+    background-color: #f0f7ff;
+}
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.selected {
+    color: #333;
+    max-width: 350px;
+    font-weight: bold;
+    margin: auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+#selected-score, #selected-constant {
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    background: #fff;
+    color: #333 ;
+    border-radius: 10px;
+    padding: 5px 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    min-width: 100px;
+}
+.calculate-btn{
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(45deg, #695df7, #ba23f2);
+    background-size: 200% 100%;
+    border: none; 
+    color: white;
+    border-radius: 5px;
+    transition: .3s cubic-bezier(0.45, 0, 0.55, 1);
+}
+#result {
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-top: 20px;
+    color: #333;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }

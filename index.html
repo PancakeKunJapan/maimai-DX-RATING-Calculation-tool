@@ -7,55 +7,72 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="content">
+        <div class="header">
+            <h1>maimai スコア計算ツール</h1>
+        </div>
 
-    <h1>maimai スコア計算ツール</h1>
-    <h2>1, 定数を選ぶ</h2>
-    <p>レベルを押すと細かい定数が表示されます。</p>
+        <div class="procedure1">
+            <h2>1, 定数を選ぶ</h2>
+            <p>レベルを押すと細かい定数が表示されます。</p>
+            <div id="constants">
+                <button class="level-btn">15</button>
+                <button class="level-btn">14+</button>
+                <button class="level-btn">14</button>
+                <button class="level-btn">13+</button>
+                <button class="level-btn">13</button>
+                <button class="level-btn">12+</button>
+                <button class="level-btn">12</button>
+                <button class="level-btn">11+</button>
+                <button class="level-btn">11</button>
+                <button class="level-btn">10+</button>
+                <button class="level-btn">10</button>
 
-    <div id="constants">
-        <button id="tB15" class="level-btn">15</button>
-        <button id="tB14+" class="level-btn">14+</button>
-        <button id="tB14" class="level-btn">14</button>
-        <button id="tB13+" class="level-btn">13+</button>
-        <button id="tB13" class="level-btn">13</button>
-        <button id="tB12+" class="level-btn">12+</button>
-        <button id="tB12" class="level-btn">12</button>
-        <button id="tB11+" class="level-btn">11+</button>
-        <button id="tB11" class="level-btn">11</button>
-        <button id="tB10+" class="level-btn">10+</button>
-        <button id="tB10" class="level-btn">10</button>
+                <div style="display: none;">
+                    <div id="tE15"><button data="15.0">15.0</button></div>
+                    <div id="tE14+"><button data="14.6">14.6</button><button data="14.7">14.7</button><button data="14.8">14.8</button><button data="14.9">14.9</button></div>
+                    <div id="tE14"><button data="14.0">14.0</button><button data="14.1">14.1</button><button data="14.2">14.2</button><button data="14.3">14.3</button><button data="14.4">14.4</button><button data="14.5">14.5</button></div>
+                    <div id="tE13+"><button data="13.6">13.6</button><button data="13.7">13.7</button><button data="13.8">13.8</button><button data="13.9">13.9</button></div>
+                    <div id="tE13"><button data="13.0">13.0</button><button data="13.1">13.1</button><button data="13.2">13.2</button><button data="13.3">13.3</button><button data="13.4">13.4</button><button data="13.5">13.5</button></div>
+                    <div id="tE12+"><button data="12.6">12.6</button><button data="12.7">12.7</button><button data="12.8">12.8</button><button data="12.9">12.9</button></div>
+                    <div id="tE12"><button data="12.0">12.0</button><button data="12.1">12.1</button><button data="12.2">12.2</button><button data="12.3">12.3</button><button data="12.4">12.4</button><button data="12.5">12.5</button></div>
+                    <div id="tE11+"><button data="11.6">11.6</button><button data="11.7">11.7</button><button data="11.8">11.8</button><button data="11.9">11.9</button></div>
+                    <div id="tE11"><button data="11.0">11.0</button><button data="11.1">11.1</button><button data="11.2">11.2</button><button data="11.3">11.3</button><button data="11.4">11.4</button><button data="11.5">11.5</button></div>
+                    <div id="tE10+"><button data="10.6">10.6</button><button data="10.7">10.7</button><button data="10.8">10.8</button><button data="10.9">10.9</button></div>
+                    <div id="tE10"><button data="10.0">10.0</button><button data="10.1">10.1</button><button data="10.2">10.2</button><button data="10.3">10.3</button><button data="10.4">10.4</button><button data="10.5">10.5</button></div>
+                </div>
+            </div>
+            <div id="overlay" class="overlay">
+                <div id="modal-content" class="modal-content"></div>
+            </div>
+        </div>
 
-        <div style="display: none;">
-            <div id="tE15"><button>15.0</button></div>
-            <div id="tE14+"><button>14.6</button><button>14.7</button><button>14.8</button><button>14.9</button></div>
-            <div id="tE14"><button>14.0</button><button>14.1</button><button>14.2</button><button>14.3</button><button>14.4</button><button>14.5</button></div>
-            <div id="tE13+"><button>13.6</button><button>13.7</button><button>13.8</button><button>13.9</button></div>
-            <div id="tE13"><button>13.0</button><button>13.1</button><button>13.2</button><button>13.3</button><button>13.4</button><button>13.5</button></div>
-            <div id="tE12+"><button>12.6</button><button>12.7</button><button>12.8</button><button>12.9</button></div>
-            <div id="tE12"><button>12.0</button><button>12.1</button><button>12.2</button><button>12.3</button><button>12.4</button><button>12.5</button></div>
-            <div id="tE11+"><button>11.6</button><button>11.7</button><button>11.8</button><button>11.9</button></div>
-            <div id="tE11"><button>11.0</button><button>11.1</button><button>11.2</button><button>11.3</button><button>11.4</button><button>11.5</button></div>
-            <div id="tE10+"><button>10.6</button><button>10.7</button><button>10.8</button><button>10.9</button></div>
-            <div id="tE10"><button>10.0</button><button>10.1</button><button>10.2</button><button>10.3</button><button>10.4</button><button>10.5</button></div>
+        <div class="procedure2">
+            <h2>2, 達成率を入力</h2>
+            <div class="note">
+                <p>達成率は%を除く数字のみ入力してください。</p>
+                <label class="ap-checkbox">
+                    <input type="checkbox" id="ap-checkbox"> AP済み
+                </label>
+            </div>
+            <div class="score">
+                <input type="number" id="completion-score" placeholder="100.1234" step="0.0001">
+            </div>
+        </div>
+
+        <div class="procedure3">
+            <h2>3, 計算</h2>
+            <div class="selected">
+                <p>定数: <span id="selected-constant">-</span></p>
+                <p>スコア: <span id="selected-score">-</span></p>
+            </div>
+            <button id="calculate-btn" class="calculate-btn" style="width: 200px; height: auto; font-size: 1.5rem; margin: 20px auto;">計算</button>
+            <div id="result">
+                <p>単曲レート<br><span id="single-rate">-</span></p>
+                <p>総合レート<br><span id="overall-rate">-</span></p>
+            </div>
         </div>
     </div>
-
-    <h2>2, スコアを選ぶ</h2>
-    <label for="score">スコア:</label>
-    <select name="score" id="score">
-        <option value="AP">AP</option>
-        <option value="SSS+">SSS+</option>
-        <option value="SSS">SSS</option>
-        <option value="SS+">SS+</option>
-        <option value="SS">SS</option>
-        <option value="S+">S+</option>
-        <option value="S">S</option>
-    </select>
-
-    <div id="overlay" class="overlay">
-        <div id="modal-content" class="modal-content"></div>
-    </div>
-
     <script src="script.js"></script>
 </body>
 </html>
